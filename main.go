@@ -3,6 +3,7 @@ package main
 import (
 	"encoding/binary"
 	"encoding/json"
+	"fmt"
 	"log"
 	"net"
 	"net/http"
@@ -201,14 +202,21 @@ func handleWSConnection(w http.ResponseWriter, r *http.Request) {
 	client.PC = pc
 
 	/* -------------------- Devices -------------------- */
+	println("device enumerating....")
 
 	for _, d := range mediadevices.EnumerateDevices() {
 		if d.Kind == mediadevices.VideoInput {
 			if strings.Contains(d.Label, "video0") {
 				video3DID = d.DeviceID
+				fmt.Println("*************************")
+				fmt.Println(video3DID)
+				fmt.Println("*************************")
 			}
-			if strings.Contains(d.Label, "video4") {
+			if strings.Contains(d.Label, "video1") {
 				video4DID = d.DeviceID
+				fmt.Println("*************************")
+				fmt.Println(video4DID)
+				fmt.Println("*************************")
 			}
 		}
 	}
