@@ -7,6 +7,7 @@ import (
 	"log"
 	"net"
 	"net/http"
+	"os"
 	"strconv"
 	"strings"
 
@@ -269,6 +270,13 @@ func handleWSConnection(w http.ResponseWriter, r *http.Request) {
 /* ----------------------------- main ----------------------------- */
 
 func main() {
+	f, err := os.Open("/dev/video1")
+	if err != nil {
+		log.Printf("open video0 failed: %v", err)
+	} else {
+		log.Println("video0 opened successfully")
+		f.Close()
+	}
 	http.HandleFunc("/ws", handleWSConnection)
 	log.Println("Server started on :9091")
 	log.Fatal(http.ListenAndServe(":9091", nil))
