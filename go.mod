@@ -1,6 +1,6 @@
 module github.com/jenojiji/nattugla-media-agent
 
-go 1.24.0
+go 1.25.0
 
 require (
 	github.com/gorilla/websocket v1.5.3
@@ -28,7 +28,7 @@ require (
 	github.com/pion/turn/v5 v5.0.10 // indirect
 	github.com/wlynxg/anet v0.0.5 // indirect
 	golang.org/x/crypto v0.48.0 // indirect
-	golang.org/x/image v0.23.0 // indirect
+	golang.org/x/image v0.41.0 // indirect
 	golang.org/x/net v0.50.0 // indirect
 	golang.org/x/sys v0.41.0 // indirect
 	golang.org/x/time v0.14.0 // indirect
