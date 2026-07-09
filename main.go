@@ -206,13 +206,13 @@ func handleWSConnection(w http.ResponseWriter, r *http.Request) {
 
 	for _, d := range mediadevices.EnumerateDevices() {
 		if d.Kind == mediadevices.VideoInput {
-			if strings.Contains(d.Label, "video0") {
+			if strings.Contains(d.Label, "video3") {
 				video3DID = d.DeviceID
 				fmt.Println("*************************")
 				fmt.Println(video3DID)
 				fmt.Println("*************************")
 			}
-			if strings.Contains(d.Label, "video1") {
+			if strings.Contains(d.Label, "video4") {
 				video4DID = d.DeviceID
 				fmt.Println("*************************")
 				fmt.Println(video4DID)
